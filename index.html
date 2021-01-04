@@ -2,16 +2,42 @@
 <html lang="en">
 
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Tik Tak Too</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Tik Tak Too</title>
 
-     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;0,800;1,500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
-     <script src="main.js"></script>
+	
+	<div class="header">
+		<h1>TIK TAK TOO</h1>
+	</div>
+	
+	<div class="game-scene">
+		<div data-key = "1" class="cell top left"></div>
+		<div data-key = "2" class="cell top"></div>	
+		<div data-key = "3" class="cell top right"></div>	
+		<div data-key = "4" class="cell left"></div>	
+		<div data-key = "5" class="cell"></div>	
+		<div data-key = "6" class="cell right"></div>	
+		<div data-key = "7" class="cell left bottom"></div>	
+		<div data-key = "8" class="cell bottom"></div>
+		<div data-key = "9" class="cell bottom right"></div>	
+	</div>
+	
+		
+	<div class="buttons">
+		<span data-option = "o">O</span>
+		<span data-option = "x">X</span>
+		<button class="start">NOWA GRA</button>
+	</div>
+	
+	<script src="main.js"></script>
 </body>
 
 </html>
