@@ -4,11 +4,19 @@
 	box-sizing: border-box;
 }
 
+:root{
+	--color-app: #0B4F6C;
+	--color-bg: #FBFBFF;
+	--color-text: #01BAEF;
+}
+
 body {
-	background-color: #328daf;
+	background-color: var(--color-bg);
 	font-family: 'Raleway', sans-serif;
 	overflow: hidden;
 }
+
+/*nagłowek*/
 
 .header{
 	display: flex;
@@ -17,58 +25,67 @@ body {
 
 .header h1{
 	margin-top: 8vh;
-	color: #1c5367;
+	color: var(--color-text);
 	font-size: 8vh;
 	letter-spacing: 3px;
 	font-weight: 800;
-	transition: .5s;
-	cursor: pointer;
+	cursor: default;
 }
 
-.header h1:hover{
-	transform: rotate(-5deg);
+
+.header a{
+	text-decoration: none;
 }
+
+/*przyciski*/
 
 .buttons{
+	display: flex;
 	position: absolute;
 	bottom:5%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 }
 
-.buttons .start{
-	padding: 8px 20px;
-	font-size: 3vh;
-	background-color: #1c5367;
-	border: none;
-	border-radius: 5px;
-	color:#328daf;
-	outline: 0;
-	transition: .5s;
-	font-weight: 700;
-}
-
 .buttons span{
 	margin-right: 2vh;
-	color: #328daf;
+	color: var(--color-bg);
 	font-weight: 800;
 	font-size: 3vh;
 	padding: 8px 20px;
-	background-color: #1c5367;
+	background-color: var(--color-app);
 	border-radius: 5px;
 	transition: .3s;
 }
 
 .buttons span:hover{
 	cursor: pointer;
-	color: white;
+	background-color: var(--color-text);
 }
 
-.start:hover{
-	transform: rotate(5deg);
-	cursor: pointer;
-	color:White;
+.btn{
+	padding: 8px 20px;
+	font-size: 3vh;
+	background-color: var(--color-app);
+	border: none;
+	border-radius: 5px;
+	color: var(--color-bg);
+	outline: 0;
+	font-weight: 700;
+	transition: .3s;
 }
+
+.btn:hover{
+	animation: move .2s infinite alternate;
+	cursor: pointer;
+	background-color: var(--color-text);
+}
+
+.restart{
+	display: none;
+}
+
+/*plansza*/
 
 .game-scene{
 	width: 50vh;
@@ -82,23 +99,21 @@ body {
 }
 
 .cell{
-	border: 5px solid #1c5367;
+	border: 5px solid var(--color-app);
 	cursor: pointer;
-	color: white;
+	color: var(--color-text);
 	position: relative;
-/*
-	border-radius: 10px;
-	margin: 3px;
-*/
 }
 
 .cell span{
 	position: absolute;
-	top: 50%;
+	top: 45%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	font-size: 14vh;
 }
+
+/*animacje i inne*/
 
 .top{
 	border-top: none;
@@ -118,6 +133,27 @@ body {
 }
 
 .buttons .active{
-	color: white;
+	background-color: var(--color-text);
 }
+
+.bounce{
+	animation: move .2s infinite alternate;
+	background-color :var(--color-text);
+}
+
+.win-cell{
+	transition: 2s;
+	color: #ff4d36;
+}
+
+@keyframes move {
+	0%{
+		transform:translateY(0%);
+	}
+
+	100%{
+		transform: translateY(-5px);
+	}
+}
+
 
